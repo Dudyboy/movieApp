@@ -15,9 +15,7 @@ const store = compose(
     autoRehydrate(), applyMiddleware(...middleware)
 )(createStore)(reducers);
 
-persistStore(store, {storage: AsyncStorage}, () => {
-    console.log('restored')
-});
+persistStore(store, {storage: AsyncStorage});
 
 global.connected = false;
 

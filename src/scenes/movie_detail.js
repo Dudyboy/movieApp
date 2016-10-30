@@ -18,13 +18,8 @@ class MovieDetail extends Component {
         this.props.getDetailMovie(this.props.id);
     }
 
-    componentWillUnmount() {
-        console.log('Will unmount');
-    }
-
     render() {
         const { bottomTextContainer, textContainer, titleText, descriptionText } = styles;
-        console.log(connected);
 
         if(!this.props.activeMovies[`${this.props.id}`] && !connected) {
             return (

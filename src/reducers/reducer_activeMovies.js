@@ -5,7 +5,6 @@ const INITIAL_STATE = {};
 export default function (state = INITIAL_STATE, action) {
     switch(action.type) {
         case ACTIVE_MOVIES:
-            console.log(state);
             return {
                 ...state,
                 [action.payload.id]: action.payload

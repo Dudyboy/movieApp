@@ -14,8 +14,6 @@ export const getMovies = () => {
             let response = await fetch(`${ROOT_URL}3/movie/popular?api_key=${API_KEY}`);
             let responseJson = await response.json();
 
-            console.log(responseJson);
-
             dispatch({
                 type: MOVIES,
                 payload: responseJson.results
@@ -44,8 +42,6 @@ export const getDetailMovie = (id) => {
             let response = await fetch(`${ROOT_URL}3/movie/${id}?api_key=${API_KEY}`);
             let responseJson = await response.json();
 
-            console.log(responseJson);
-
             dispatch({
                 type: ACTIVE_MOVIES,
                 payload: responseJson
@@ -71,7 +67,6 @@ export const searchMovies = (movie) => {
             spinnerList: true
         });
         try {
-            console.log(!movie.length);
             let responseJson;
             if(!movie.length) {
                 let response = await fetch(`${ROOT_URL}3/movie/popular?api_key=${API_KEY}`);
